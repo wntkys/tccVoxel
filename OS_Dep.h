@@ -2,7 +2,7 @@
 #define OS_DEP_H_INCLUDED
 #include <windows.h>
 #include <gl/gl.h>
-#include <GL/wglext.h>
+//#include <GL/wglext.h>
 
 LRESULT CALLBACK WindowProc(HWND, UINT, WPARAM, LPARAM);
 void EnableOpenGL(HWND hwnd, HDC*, HGLRC*);
@@ -207,9 +207,9 @@ void EnableOpenGL(HWND hwnd, HDC* hDC, HGLRC* hRC)
     *hRC = wglCreateContext(*hDC);
 
     wglMakeCurrent(*hDC, *hRC);
-    PFNWGLSWAPINTERVALEXTPROC pfnwglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)wglGetProcAddress("wglSwapIntervalEXT");
-    if(pfnwglSwapIntervalEXT != NULL)
-    pfnwglSwapIntervalEXT(1);// or 0 to disable vsync, test and see which looks best
+    //PFNWGLSWAPINTERVALEXTPROC pfnwglSwapIntervalEXT = (PFNWGLSWAPINTERVALEXTPROC)wglGetProcAddress("wglSwapIntervalEXT");
+    //if(pfnwglSwapIntervalEXT != NULL)
+    //pfnwglSwapIntervalEXT(1);// or 0 to disable vsync, test and see which looks best
 }
 
 void DisableOpenGL (HWND hwnd, HDC hDC, HGLRC hRC)

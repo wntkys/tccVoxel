@@ -32,6 +32,8 @@
 			<Add option="-Wall" />
 		</Compiler>
 		<Linker>
+			<Add option="-luser32" />
+			<Add option="-lkernel32" />
 			<Add library="opengl32" />
 			<Add library="glu32" />
 			<Add library="gdi32" />
