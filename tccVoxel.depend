@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1621339995 source:c:\users\79220\documents\github\tccvoxel\main.c
+	"OS_Dep.h"
+
+1621339995 c:\users\79220\documents\github\tccvoxel\os_dep.h
+	<windows.h>
+	<gl/gl.h>
+	<GL/wglext.h>
+
