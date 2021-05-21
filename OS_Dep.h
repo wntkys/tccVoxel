@@ -22,7 +22,7 @@ struct RigelWindowData
 
 struct RigelWindowData RWD;
 
-int initRL(void (*renderFunc)(), void(*updateFunc)())
+int initRL(void (*initFunc)(),void (*renderFunc)(), void(*updateFunc)(DWORD))
 {
     WNDCLASSEX wcex;
     HWND hwnd;
@@ -72,6 +72,7 @@ int initRL(void (*renderFunc)(), void(*updateFunc)())
     EnableOpenGL(hwnd, &hDC, &hRC);
     DWORD currentTime = GetTickCount();
     DWORD oldTime = GetTickCount();
+    initFunc();
     /* program main loop */
     while (!bQuit)
     {
@@ -89,6 +90,9 @@ int initRL(void (*renderFunc)(), void(*updateFunc)())
                 DispatchMessage(&msg);
             }
         }
+        oldTime = currentTime;
+        currentTime = GetTickCount();
+        DWORD delta = currentTime - oldTime;
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         glPushMatrix();
         renderFunc();
@@ -104,7 +108,7 @@ int initRL(void (*renderFunc)(), void(*updateFunc)())
             RWD.cursorPosYf = (((float)p.y/RWD.sizeY)*-2 + 1);
             //printf("%i\n",RWD.sizeX);
         }
-        updateFunc();
+        updateFunc(delta);
     }
 
     /* shutdown OpenGL */
@@ -224,7 +228,7 @@ void ResizeWindow()
     RWD.aspectRatio = RWD.sizeX / (float)RWD.sizeY;
     glLoadIdentity();
     glViewport(0, 0, RWD.sizeX, RWD.sizeY);
-    glOrtho(-RWD.aspectRatio,RWD.aspectRatio, -1,1, 0, 2);
+    glFrustum(-RWD.aspectRatio,RWD.aspectRatio, -1,1, 2, 200);
     //glFrustum(-k,k, -1,1, 0,2);
 }
 

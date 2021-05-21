@@ -1,8 +1,11 @@
 # depslib dependency file v1.0
-1621339995 source:c:\users\79220\documents\github\tccvoxel\main.c
+1621614434 source:c:\users\79220\documents\github\tccvoxel\main.c
 	"OS_Dep.h"
+	"Camera_Works.h"
 
-1621346069 c:\users\79220\documents\github\tccvoxel\os_dep.h
+1621614557 c:\users\79220\documents\github\tccvoxel\os_dep.h
 	<windows.h>
 	<gl/gl.h>
+
+1621614865 c:\users\79220\documents\github\tccvoxel\camera_works.h
 

@@ -1,29 +1,48 @@
 #include "OS_Dep.h"
+#include "Camera_Works.h"
 
+void init()
+{
+    camera.x = 0;
+    camera.y = 0;
+    camera.maxSpeedX = 2;
+    camera.maxSpeedY = 1;
+
+}
 
 void render()
 {
-    glTranslatef(RWD.cursorPosXf, RWD.cursorPosYf, 0);
-    //glTranslatef(-RWD.aspectRatio,1,0);
-    //printf("%f %f\n",RWD.cursorPosYf, RWD.cursorPosXf);
-    glScalef(0.1,0.1, 1);
-
-    glBegin(GL_QUADS);
-    glColor3f(1,0.5, 0.2);
-    glVertex2f(-1,1);
-    glVertex2f(-1,-1);
-    glColor3f(0.2,1, 0.2);
-    glVertex2f(1,-1);
-    glVertex2f(1,1);
+    glBegin(GL_LINE_LOOP);
+    glVertex3f(0,0,0);
+    glVertex3f(1,0,0);
+    glVertex3f(1,1,0);
     glEnd();
+    translateByCamera();
+    const int vert[] = {1,1,0, 1,-1,0, -1,-1,0, -1,1,0};
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_INT, 0, &vert);
+    for (int i = -10; i <= 10; i++)
+    {
+        for (int j = -10; j <= 10; j++)
+        {
+            glPushMatrix();
+            if ((i + j) % 2 == 0) glColor3ub(34,139,34);
+            else glColor3ub(0,207,0);
+            glTranslatef(i*2, j*2, 0);
+            glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+            glPopMatrix();
+        }
+    }
+
+    glDisableClientState(GL_VERTEX_ARRAY);
 }
 
-void update()
+void update(DWORD delta)
 {
-    //printf("pishov nahui\n");
+    MoveCamera(delta);
 }
 
 int main()
 {
-    initRL(*render, *update);
+    initRL(*init,*render, *update);
 }
