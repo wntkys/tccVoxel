@@ -1,25 +1,23 @@
 #include "OS_Dep.h"
 #include "Camera_Works.h"
+#include "Voxel_Works.h"
 
+struct voxelMesh vm;
 void init()
 {
     camera.x = 0;
     camera.y = 0;
     camera.maxSpeedX = 2;
     camera.maxSpeedY = 1;
-
+    genCube(&vm);
+    calcCulling(&vm);
 }
 
 void render()
 {
-    glBegin(GL_LINE_LOOP);
-    glVertex3f(0,0,0);
-    glVertex3f(1,0,0);
-    glVertex3f(1,1,0);
-    glEnd();
     translateByCamera();
     const int vert[] = {1,1,0, 1,-1,0, -1,-1,0, -1,1,0};
-    glEnableClientState(GL_VERTEX_ARRAY);
+    /*glEnableClientState(GL_VERTEX_ARRAY);
     glVertexPointer(3, GL_INT, 0, &vert);
     for (int i = -10; i <= 10; i++)
     {
@@ -34,7 +32,8 @@ void render()
         }
     }
 
-    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);*/
+    drawVM(&vm);
 }
 
 void update(DWORD delta)

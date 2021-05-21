@@ -70,6 +70,8 @@ int initRL(void (*initFunc)(),void (*renderFunc)(), void(*updateFunc)(DWORD))
     ShowWindow(hwnd, SW_NORMAL);
     /* enable OpenGL for the window */
     EnableOpenGL(hwnd, &hDC, &hRC);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LESS);
     DWORD currentTime = GetTickCount();
     DWORD oldTime = GetTickCount();
     initFunc();
