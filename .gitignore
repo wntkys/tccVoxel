@@ -1,3 +1,10 @@
 
 bin/Release/tccVoxel.exe
 obj/Release/main.o
+obj/Debug/main.o
+bin/Debug/tccVoxel.exe
+bin/Release/Снимок экрана 2021-05-24 000529.png
+bin/Debug/tccVoxel.exe
+bin/Debug/tccVoxel.exe
+*.exe
+bin/Debug/tccVoxel.exe

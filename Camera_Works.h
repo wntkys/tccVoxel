@@ -1,8 +1,7 @@
 #ifndef CAMERA_WORKS_H_INCLUDED
 #define CAMERA_WORKS_H_INCLUDED
-
-#define M_PI 3.14159265358979323846
-const float SQ_R = 0.70710678118;
+#include "myMath.h"
+#include "math.h"
 
 struct Camera{
     float xAlfa;
@@ -73,19 +72,19 @@ void MoveCamera(DWORD delta)
 
     if (GetKeyState('W') < 0)
     {
-        fdsp += +0.01 * delta;
+        fdsp += +0.02 * delta;
     }
     if (GetKeyState('S') < 0)
     {
-        fdsp -= 0.01 * delta;
+        fdsp -= 0.02 * delta;
     }
     if (GetKeyState('A') < 0)
     {
-        lrsp -= 0.01 * delta;
+        lrsp -= 0.02 * delta;
     }
     if (GetKeyState('D') < 0)
     {
-        lrsp += 0.01 * delta;
+        lrsp += 0.02 * delta;
     }
 
     //float speed = 0;

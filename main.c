@@ -1,7 +1,7 @@
 #include "OS_Dep.h"
 #include "Camera_Works.h"
 #include "Voxel_Works.h"
-
+#include "math.h"
 struct voxelMesh vm;
 void init()
 {
@@ -9,7 +9,9 @@ void init()
     camera.y = 0;
     camera.maxSpeedX = 2;
     camera.maxSpeedY = 1;
+    camera.xAlfa = 90;
     genCube(&vm);
+
     calcCulling(&vm);
 }
 
