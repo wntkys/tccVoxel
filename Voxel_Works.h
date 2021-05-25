@@ -139,6 +139,11 @@ void drawVM(struct voxelMesh* v)
     }
 }
 
+struct chunkMesh
+{
+
+};
+
 //
 //
 //      /\

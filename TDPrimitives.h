@@ -1,0 +1,7 @@
+#ifndef TDPRIMITIVES_H_INCLUDED
+#define TDPRIMITIVES_H_INCLUDED
+#include <GL/gl.h>
+
+
+
+#endif // TDPRIMITIVES_H_INCLUDED
