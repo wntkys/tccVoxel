@@ -10,7 +10,6 @@ struct voxelMesh
     short data[chunkSizes][chunkSizes][chunkSizes];
     unsigned char culling[chunkSizes][chunkSizes][chunkSizes];
 };
-
 void genCube(struct voxelMesh* v)
 {
     for(char i = 0; i < chunkSizes; i++)
@@ -84,6 +83,7 @@ void drawVM(struct voxelMesh* v)
 
                 glColor3f((float)i/16,(float)j/16,(float)k/16);
                 glBegin(GL_QUADS);
+
                 if((v->culling[i][j][k] & 0b10000000) != 0) // leftSide
                 {
                     glVertex3i(-1,1,-1);

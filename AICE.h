@@ -70,6 +70,7 @@ void updateZayac(struct entity* e, DWORD delta)
     //printf("cock");
     e->x = sin(((float)(((struct aICE*)(e->heap))->time)) / 100);
     e->y = cos(((float)(((struct aICE*)(e->heap))->time)) / 100);
+    e->zAlfa = (float)(((struct aICE*)(e->heap))->time);
 
 }
 

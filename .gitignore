@@ -2,3 +2,4 @@
 bin/Release/tccVoxel.exe
 obj/Release/
 obj/Debug/
+*.png

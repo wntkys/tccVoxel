@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1621920583 source:c:\users\79220\documents\github\tccvoxel\main.c
+1622018464 source:c:\users\79220\documents\github\tccvoxel\main.c
 	"OS_Dep.h"
 	"Camera_Works.h"
 	"Voxel_Works.h"
@@ -8,15 +8,15 @@
 	"effex.h"
 	"AICE.h"
 
-1621691136 c:\users\79220\documents\github\tccvoxel\os_dep.h
+1622018162 c:\users\79220\documents\github\tccvoxel\os_dep.h
 	<windows.h>
 	<gl/gl.h>
 
-1621677497 c:\users\79220\documents\github\tccvoxel\camera_works.h
+1622031538 c:\users\79220\documents\github\tccvoxel\camera_works.h
 	"myMath.h"
 	"math.h"
 
-1621858956 c:\users\79220\documents\github\tccvoxel\voxel_works.h
+1622017766 c:\users\79220\documents\github\tccvoxel\voxel_works.h
 	<GL/gl.h>
 
 1621677257 c:\users\79220\documents\github\tccvoxel\mymath.h
@@ -28,6 +28,6 @@
 	"math.h"
 	"myMath.h"
 
-1621920665 c:\users\79220\documents\github\tccvoxel\aice.h
+1621931473 c:\users\79220\documents\github\tccvoxel\aice.h
 	"math.h"
 

@@ -34,7 +34,7 @@ void MoveCamera(DWORD delta)
         camera.speedX *= 0.4;
     }
 
-    camera.xAlfa = camera.xAlfa + camera.speedX;
+    camera.xAlfa = camera.xAlfa + camera.speedX * delta / 15;
     if (camera.xAlfa> 180)
     {
         camera.xAlfa = 180;
@@ -61,7 +61,7 @@ void MoveCamera(DWORD delta)
         if (camera.speedY < -camera.maxSpeedY) camera.speedY = -camera.maxSpeedY;
     }
 
-    camera.yAlfa = camera.yAlfa + camera.speedY;
+    camera.yAlfa = camera.yAlfa + camera.speedY * delta / 10;
 
     float ugol = -camera.yAlfa /180 * M_PI;
     float deltaUgol = 0;

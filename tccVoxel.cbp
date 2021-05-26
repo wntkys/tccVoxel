@@ -38,15 +38,18 @@
 			<Add library="glu32" />
 			<Add library="gdi32" />
 		</Linker>
+		<Unit filename="AICE.h" />
 		<Unit filename="Camera_Works.h" />
 		<Unit filename="Entity.h" />
 		<Unit filename="OS_Dep.h" />
+		<Unit filename="TDPrimitives.h" />
 		<Unit filename="Voxel_Works.h" />
 		<Unit filename="effex.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="myMath.h" />
+		<Unit filename="shader.frag" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

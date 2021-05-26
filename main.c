@@ -47,5 +47,5 @@ void update(DWORD delta)
 
 int main()
 {
-    initRL(*init,*render, *update);
+    initRL(&init, &render, &update);
 }
